@@ -59,7 +59,7 @@ def get_match_infomation(lgu, dri):
 
         dri.close()
         dri.switch_to.window(dri.window_handles[0])
-        
+
     print(game)
     return game
 
@@ -101,19 +101,20 @@ def my_func(url):
     # получаем элементы с ссылками на игры турнира
     h2h_games = get_match_list_url(driver)
     # получаем историю личных встреч
-    games_info = get_match_infomation(h2h_games, driver)
-    # преобразуем данные в датафрейм
-    df = processing_match_information(games_info)
+    # games_info = get_match_infomation(h2h_games, driver)
+    # # преобразуем данные в датафрейм
+    # df = processing_match_information(games_info)
 
-    return df
+    return h2h_games
+    # return df
 
 
 if __name__ == "__main__":
     URL = 'https://www.sport-liga.pro/ru/table-tennis/tournaments/45714'
 
-    t0 = time.time()
+    # t0 = time.time()
     data1 = my_func(URL)
-    t1 = time.time()
-    print(t1 - t0)
+    # t1 = time.time()
+    # print(t1 - t0)
 
     print(data1)
